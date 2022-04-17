@@ -40,7 +40,7 @@ An Employee can upload an image of his/her receipt as part of the reimbursement 
 
 Getting Started
 
-open git bash to directory you wish to clone to, run "git clone https://github.com/anjohnsonoh/EmployeeReimbursmentSystem.git"
+open git bash to directory you wish to clone to, run "git clone https://github.com/jasmynmedina/P1-EmployeeReimbursmentSystem"
 
 BackEnd:
 
