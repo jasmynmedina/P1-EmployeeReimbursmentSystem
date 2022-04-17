@@ -42,15 +42,15 @@ Employees must select the type of reimbursement as: LODGING, TRAVEL, FOOD, or OT
 
 **To-do list:**
 
-*A Manager can view reimbursement requests from a single Employee
-*A Manager can view images of the receipts from reimbursement requests (extra credit)
-*An Employee can upload an image of his/her receipt as part of the reimbursement request (extra credit)
+* A Manager can view reimbursement requests from a single Employee
+* A Manager can view images of the receipts from reimbursement requests (extra credit)
+* An Employee can upload an image of his/her receipt as part of the reimbursement request (extra credit)
 
 #### Technologies Used
--Developed back-end using Eclipse IDE
--Developed front-end using Visual Studio Codes
--Developed a SpringBootApplication using Spring Framework
--Accessed API endpoints using HttpClient
--Created a Single Page Application using Angular
--Created interactive webpages using HTML, CSS, and Typescript
--Used MySQLWorkbench to access a localhost database
+- Developed back-end using Eclipse IDE
+- Developed front-end using Visual Studio Codes
+- Developed a SpringBootApplication using Spring Framework
+- Accessed API endpoints using HttpClient
+- Created a Single Page Application using Angular
+- Created interactive webpages using HTML, CSS, and Typescript
+- Used MySQLWorkbench to access a localhost database
