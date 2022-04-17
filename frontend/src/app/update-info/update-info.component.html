@@ -1,0 +1,106 @@
+
+   
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <h5 class="navstyle" style="color: honeydew"> Employee Reimbursement System | </h5>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor2"
+       aria-controls="navbarColor2" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor2">
+       <ul class="navbar-nav mr-auto">
+          <li class="navbar-item">
+             <a class="navbar-link" type="button" style="color: honeydew; margin: 0px 30px"
+                onclick="window.location.href='/employee-homepage'">Home</a>
+          </li>
+          <li class="navbar-item">
+             <a class="navbar-link" type="button" style="color: honeydew; margin: 0px 30px"
+                onclick="window.location.href='/submit-reimbursement'">Submit Reimbursement</a>
+          </li>
+          <li class="navbar-item">
+             <a class="navbar-link" type="button" style="color: honeydew; margin: 0px 30px" onclick="window.location.href='/review-reimbursement'"
+                >Review Reimbursements</a>
+          </li>
+          <li class="navbar-item">
+             <a class="navbar-link" type="button" style="color: honeydew" (click)="logout()">Logout</a>
+          </li>
+       </ul>
+    </div>
+ </nav>
+
+    <h1 class="center" style="color: #9c8cd4;">Update Information</h1>
+    <body style="width: 400px;">
+        <br>
+    <div class="overall">
+    <form name = "employeeForm" #employeeForm="ngForm" (ngSubmit)="employeeForm.form.valid && updateEmployee(employeeForm)">
+        <label for="username" class="control-label">Username</label>
+        <input type="text" class="form-control" required name="username" placeholder="Username" [(ngModel)]="employee.username"/>
+       
+        <label for="firstName" class="control-label">First Name</label>
+        <input type="text" class="form-control"required name="firstName" placeholder="First Name"[(ngModel)]="employee.firstName"/>
+        
+        <label for="lastName" class="control-label">Last Name</label>
+        <input type="text" class="form-control" required name="lastName" placeholder="Last Name"[(ngModel)]="employee.lastName"/>
+        
+        <label for="password" class="control-label">Password</label>
+        <input type="password" class="form-control" required name="password" placeholder="Password" [(ngModel)]="employee.password"/>
+        
+        <label for="email" class="control-label">Email</label>
+        <input type="text" class="form-control" required name="email" placeholder="Email" [(ngModel)]="employee.email"/>
+       
+        <div *ngIf="message != null" class="notification" style="color: #9c8cd4">
+            <p>{{ message }}</p>
+        </div>
+
+        <button [disabled]="employeeForm.invalid" type="submit" name="send" value="update" class="btn btn-dark">Update</button>
+    </form>
+    </div>
+</body>
+
+    <div class="center"></div>
+        <br >
+        
+                <div class="center">
+                <table style="width: 50%; border: 1%; border-style: solid; text-align: center;">
+                        <tr>
+                            <td>
+                                Firstname
+                            </td>
+                            <td>
+                                Lastname
+                            </td>
+                            <td>
+                                Username
+                            </td>
+                            <td>
+                                Password
+                            </td>
+                            <td>
+                                Email
+                            </td>
+                            <td>
+                                Role
+                            </td>
+                        
+                        </tr>
+                        <tr>
+                            <td>
+                                {{employee.firstName}}
+                            </td>
+                            <td>
+                                {{employee.lastName}}
+                            </td>
+                            <td>
+                                {{employee.username}}
+                            </td>
+                            <td>
+                                {{employee.password}}
+                            </td>
+                            <td> 
+                                {{employee.email}}
+                            </td>
+                            <td> 
+                                {{employee.role}}
+                            </td>
+                            </tr>
+                    </table>
+                </div>

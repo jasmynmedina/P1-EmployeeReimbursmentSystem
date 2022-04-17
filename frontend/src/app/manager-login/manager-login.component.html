@@ -1,0 +1,17 @@
+<div>
+    <h1 style="color: #9c8cd4;"> Manager Login</h1>
+    <form class="is-center" name="loginForm" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <div>
+            <input class="form-control input is-rounded is-dark" type="text" style="width: 200px;" ngModel name="username"
+                placeholder="Enter Username" required><br>
+            <input class="form-control input is-rounded is-dark" type="password" style="width: 200px;" ngModel name="password"
+                placeholder="Enter Password" required><br>
+                <div *ngIf="message != null" class="notification" style="color: #9c8cd4">
+                    <p>{{ message }}</p>
+            </div>
+            <input [disabled]=loginForm.invalid type="submit" class="button is-rounded is-dark" value="Login"><br>
+            <input type="submit" class="button is-rounded is-dark" onclick="location.href='/employee-login'"
+                value="Employee Login">
+        </div>
+    </form>
+</div>

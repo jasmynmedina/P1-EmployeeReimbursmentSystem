@@ -1,0 +1,119 @@
+<nav *ngIf="employeeLoggedIn" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <h5 class="navstyle" style="color: honeydew"> Employee Reimbursement System | </h5>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor2"
+        aria-controls="navbarColor2" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor2">
+        <ul class="navbar-nav mr-auto">
+            <li class="navbar-item">
+                <a class="navbar-link" type="button" style="color: honeydew; margin: 0px 30px"
+                    onclick="window.location.href='/employee-homepage'">Home</a>
+            </li>
+            <li class="navbar-item">
+                <a class="navbar-link" type="button" style="color: honeydew; margin: 0px 30px"
+                    onclick="window.location.href='/update-info'">Update Info</a>
+            </li>
+            <li class="navbar-item">
+                <a class="navbar-link" type="button" style="color: honeydew; margin: 0px 30px"
+                    onclick="window.location.href='/submit-reimbursement'">Submit Reimbursements</a>
+            </li>
+            <li class="navbar-item">
+                <a class="navbar-link" type="button" style="color: honeydew" (click)="logout()">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<nav *ngIf="managerLoggedIn" class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <h5 class="navstyle" style="color: honeydew"> Employee Reimbursement System | </h5>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor2"
+       aria-controls="navbarColor2" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor2">
+       <ul class="navbar-nav mr-auto">
+          <li class="navbar-item">
+             <a class="navbar-link" type="button" style="color: honeydew; margin: 0px 30px"
+                onclick="window.location.href='/manager-homepage'">Home</a>
+          </li>
+          <li class="navbar-item">
+            <a class="navbar-link" type="button" style="color: honeydew; margin: 0px 30px"
+               onclick="window.location.href='/view-approve'">View Approved Reimbursement</a>
+         </li>
+          <li class="navbar-item">
+             <a class="navbar-link" type="button" style="color: honeydew; margin: 0px 30px" onclick="window.location.href='/all-employees'">View All Employees</a>
+
+          </li>
+          <li class="navbar-item">
+             <a class="navbar-link" type="button" style="color: honeydew" (click)="logout()">Logout</a>
+          </li>
+       </ul>
+    </div>
+ </nav>
+<body>
+    <div style="max-width: 100%; margin: left">
+        <h1 class="center" style="color: #9c8cd4;">Review Reimbursement</h1>
+    </div>
+    <br>
+    <div *ngIf="employeeLoggedIn"style="width: 100%; margin: left;">
+        <table style="text-align: center">
+            <thead>
+                <tr>
+                    <th scope="col">Employee ID</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Submitted</th>
+                    <th scope="col">Resolved</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Manager ID</th>
+                    <th scope="col">Pending</th>
+                    <th scope="col">Approved</th>
+                    <th scope="col">Type</th>
+
+                </tr>
+            </thead>
+            <tr *ngFor="let reim of listReim">
+                <td>{{reim.author}}</td>
+                <td>{{reim.amount}}</td>
+                <td>{{reim.submitted}}</td>
+                <td>{{reim.resolved}}</td>
+                <td>{{reim.desc}}</td>
+                <td>{{reim.res}}</td>
+                <td>{{reim.pending}}</td>
+                <td>{{reim.approved}}</td>
+                <td>{{reim.type}}</td>
+            </tr>
+            <tbody id="table"></tbody>
+        </table>
+    </div>
+
+
+    <div *ngIf="managerLoggedIn"style="width: 100%; margin: left;">
+        <table style="text-align: center">
+            <thead>
+                <tr>
+                    <th scope="col">Employee ID</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Submitted</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Pending</th>
+                    <th scope="col">Approved</th>
+                    <th scope="col">Type</th>
+                    <th scope="col" style="width: 200px">Action</th>
+                </tr>
+            </thead>
+            <tr *ngFor="let reim of listReim">
+                <td>{{reim.author}}</td>
+                <td>{{reim.amount}}</td>
+                <td>{{reim.submitted}}</td>
+                <td>{{reim.desc}}</td>
+                <td>{{reim.pending}}</td>
+                <td>{{reim.approved}}</td>
+                <td>{{reim.type}}</td>
+                <td><button class="btn btn-success" type="button" (click)="approve(reim)">Approve</button> 
+                    <button class="btn btn-danger" type="button">Reject</button>
+                </td>
+            </tr>
+            <tbody id="table"></tbody>
+        </table>
+    </div>
+        </body>

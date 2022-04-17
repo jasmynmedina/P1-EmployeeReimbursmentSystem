@@ -1,0 +1,60 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <h5 class="navstyle" style="color: honeydew"> Employee Reimbursement System | </h5>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor2"
+        aria-controls="navbarColor2" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor2">
+        <ul class="navbar-nav mr-auto">
+            <li class="navbar-item">
+                <a class="navbar-link" type="button" style="color: honeydew; margin: 0px 30px"
+                    onclick="window.location.href='/employee-homepage'">Home</a>
+            </li>
+            <li class="navbar-item">
+                <a class="navbar-link" type="button" style="color: honeydew; margin: 0px 30px"
+                    onclick="window.location.href='/update-info'">Update Info</a>
+            </li>
+            <li class="navbar-item">
+                <a class="navbar-link" type="button" style="color: honeydew; margin: 0px 30px"
+                    onclick="window.location.href='/review-reimbursement'">Review Reimbursements</a>
+            </li>
+            <li class="navbar-item">
+                <a class="navbar-link" type="button" style="color: honeydew" (click)="logout()">Logout</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<h1 class="center" style="color: #9c8cd4;">Submit Reimbursement</h1>
+
+<body style="width: 400px;">
+    <br>
+    <div class="overall">
+        <form name="addForm" #addForm="ngForm" (ngSubmit)="submitReim(addForm)">
+
+            <label for="amount" class="control-label">Amount</label>
+            <input id="amount" ngModel name="amount" type="text" class="form-control" placeholder="Amount" required>
+
+            <!-- <label for="input" class="form-label">Select Expense Type</label>
+            <select id="type" class="form-control" required>
+                <option id="type" ngModel name="type" value="">Make a selection</option>
+                <option id="type" ngModel name="type" value="lodging">Lodging</option>
+                <option id="type" ngModel name="type" value="travel">Travel</option>
+                <option id="type" ngModel name="type" value="food">Food</option>
+                <option id="type" ngModel name="type" value="other">Other</option>
+            </select> -->
+            <label class="form-label">Expense Type</label>
+            <br>
+            <label style="color: #9c8cd4;" class="form-label">Lodging, Travel, Food, Other</label>
+            <textarea cols="5" rows="5" type="text" class="form-control" id="type" ngModel name="type"
+                placeholder="Expense Type" required></textarea>
+
+            <label class="form-label">Description</label>
+            <textarea cols="5" rows="5" type="text" class="form-control" id="desc" ngModel name="desc"
+                placeholder="Description" required></textarea>
+                <div *ngIf="message != null" class="notification" style="color: #9c8cd4">
+                    <p>{{ message }}</p>
+                </div>
+            <button [disabled]="addForm.invalid" type="submit" class="button is-rounded is-dark"> Submit </button>
+        </form>
+    </div>
+</body>

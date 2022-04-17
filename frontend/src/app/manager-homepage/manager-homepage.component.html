@@ -1,0 +1,75 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <h5 class="navstyle" style="color: honeydew"> Employee Reimbursement System | </h5>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor2"
+       aria-controls="navbarColor2" aria-expanded="false" aria-label="Toggle navigation">
+       <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor2">
+       <ul class="navbar-nav mr-auto">
+          <li class="navbar-item">
+             <a class="navbar-link" type="button" style="color: honeydew; margin: 0px 30px"
+                onclick="window.location.href='/all-employees'">View All Employees</a>
+          </li>
+          <li class="navbar-item">
+             <a class="navbar-link" type="button" style="color: honeydew; margin: 0px 30px"
+                onclick="window.location.href='/view-approve'">View Approved Reimbursement</a>
+          </li>
+          <li class="navbar-item">
+             <a class="navbar-link" type="button" style="color: honeydew; margin: 0px 30px" onclick="window.location.href='/review-reimbursement'"
+                >Review Reimbursements</a>
+          </li>
+          <li class="navbar-item">
+             <a class="navbar-link" type="button" style="color: honeydew" (click)="logout()">Logout</a>
+          </li>
+       </ul>
+    </div>
+ </nav>
+ <div class="center">
+    <h1 style="color: #9c8cd4;"> Welcome {{manager.firstName}}</h1></div>
+    <br >
+    
+            <div class="center">
+            <table style="width: 50%; border: 1%; border-style: solid; text-align: center;">
+                    <tr>
+                        <td>
+                            Firstname
+                        </td>
+                        <td>
+                            Lastname
+                        </td>
+                        <td>
+                            Username
+                        </td>
+                        <td>
+                            Password
+                        </td>
+                        <td>
+                            Email
+                        </td>
+                        <td>
+                            Role
+                        </td>
+                    
+                    </tr>
+                    <tr>
+                        <td>
+                            {{manager.firstName}}
+                        </td>
+                        <td>
+                            {{manager.lastName}}
+                        </td>
+                        <td>
+                            {{manager.username}}
+                        </td>
+                        <td>
+                            {{manager.password}}
+                        </td>
+                        <td> 
+                            {{manager.email}}
+                        </td>
+                        <td> 
+                            {{manager.role}}
+                        </td>
+                        </tr>
+                </table>
+            </div>
